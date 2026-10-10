@@ -1,0 +1,132 @@
+:root {
+    --primary-color: #181654;
+    --secondary-color: #ff4f12;
+    --bg-color: #f4f6fa;
+    --card-bg: #ffffff;
+    --text-color: #2d3748;
+    --success-color: #2dc937;
+    --error-color: #cc1100;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3b368a 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.9;
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.status-section {
+    margin-bottom: 25px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.status-badge.loading { background-color: #e2e8f0; color: #64748b; }
+.status-badge.online { background-color: #d1fae5; color: var(--success-color); }
+.status-badge.offline { background-color: #fee2e2; color: var(--error-color); }
+
+.team-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.team-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #eff6ff;
+    color: #3b82f6;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+.team-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.role {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
