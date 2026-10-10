@@ -1,23 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const statusBadge = document.getElementById("api-status");
+    const storageStatus = document.getElementById("storage-status");
+    const btnCreate = document.getElementById("btn-create-ticket");
+    const ticketCountEl = document.getElementById("ticket-count");
 
-    // Обращаемся к бэкенду. Порт 8000 берется из docker-compose конфигурации.
-    // Запрос идет по относительному пути /api, который проксирует Nginx или напрямую.
-    fetch('http://localhost:8000/health')
-        .then(response => {
-            if (!response.ok) throw new Error("Ошибка сервера");
-            return response.json();
-        })
-        .then(data => {
-            if (data.status === "ok") {
-                statusBadge.className = "status-badge online";
-                statusBadge.innerHTML = '<i class="fa-solid fa-circle-check"></i> Бэкенд на связи (API: OK)';
-            } else {
-                throw new Error();
+    // Имитация задержки "загрузки" системы для красивого скриншота
+    setTimeout(() => {
+        try {
+            // Проверяем, работает ли локальное хранилище в браузеры
+            localStorage.setItem("rtk_sd_test", "proven");
+            localStorage.removeItem("rtk_sd_test");
+
+            // Инициализируем счетчик заявок, если его нет
+            if (!localStorage.getItem("ticket_count")) {
+                localStorage.setItem("ticket_count", "0");
             }
-        })
-        .catch(error => {
-            statusBadge.className = "status-badge offline";
-            statusBadge.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Нет связи с бэкендом (API: Offline)';
-        });
+
+            // Обновляем интерфейс успехом
+            storageStatus.className = "status-badge online";
+            storageStatus.innerHTML = '<i class="fa-solid fa-database"></i> Локальная БД активна (Client-Side Storage: Ready)';
+            ticketCountEl.textContent = localStorage.getItem("ticket_count");
+
+        } catch (e) {
+            storageStatus.className = "status-badge offline";
+            storageStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Ошибка локального хранилища';
+        }
+    }, 800);
+
+    // Логика нажатия на кнопку "Создать заявку"
+    btnCreate.addEventListener("click", () => {
+        let currentCount = parseInt(localStorage.getItem("ticket_count") || "0", 10);
+        currentCount += 1;
+        localStorage.setItem("ticket_count", currentCount.toString());
+        ticketCountEl.textContent = currentCount;
+        
+        alert(`Заявка успешно зарегистрирована в локальной БД под номером #SD-${1000 + currentCount}`);
+    });
 });
