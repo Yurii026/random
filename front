@@ -1,1 +1,70 @@
-123
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk Portal — ООО «РТК ИТ»</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем иконки для красоты -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка с логотипом компании-партнера -->
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-headset"></i> 
+                <span>ООО «РТК ИТ»</span>
+            </div>
+            <h1>Система учёта и маршрутизации заявок технической поддержки</h1>
+            <p class="subtitle">Внутренний веб-модуль (Service Desk Portal) — MVP v1.0</p>
+        </header>
+
+        <!-- Статус интеграции с Бэкендом -->
+        <section class="status-section">
+            <div id="api-status" class="status-badge loading">
+                <i class="fa-solid fa-spinner fa-spin"></i> Проверка связи с API...
+            </div>
+        </section>
+
+        <!-- Список участников команды разработки -->
+        <section class="team-section">
+            <h2><i class="fa-solid fa-users"></i> Команда разработки</h2>
+            <div class="team-grid">
+                
+                <!-- Карточка 1: Team Lead -->
+                <div class="team-card">
+                    <div class="avatar"><i class="fa-solid fa-user-gear"></i></div>
+                    <h3>Иванов Иван</h3>
+                    <p class="role">Team Lead / Аналитик</p>
+                </div>
+
+                <!-- Карточка 2: Backend -->
+                <div class="team-card">
+                    <div class="avatar"><i class="fa-solid fa-code"></i></div>
+                    <h3>Петров Петр</h3>
+                    <p class="role">Backend-разработчик</p>
+                </div>
+
+                <!-- Карточка 3: Frontend -->
+                <div class="team-card">
+                    <div class="avatar"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Сидоров Сидор</h3>
+                    <p class="role">Frontend-разработчик</p>
+                </div>
+
+                <!-- Карточка 4: QA/DevOps -->
+                <div class="team-card">
+                    <div class="avatar"><i class="fa-solid fa-server"></i></div>
+                    <h3>Алексеев Алексей</h3>
+                    <p class="role">QA / DevOps-инженер</p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
