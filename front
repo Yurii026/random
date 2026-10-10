@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Desk Portal — ООО «РТК ИТ»</title>
+    <!-- Локальное подключение стилей, файлы лежат в одной папке -->
     <link rel="stylesheet" href="style.css">
+    <!-- Подключение иконок через CDN -->
     <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
@@ -16,28 +18,28 @@
                 <span>ООО «РТК ИТ»</span>
             </div>
             <h1>Система учёта и маршрутизации заявок технической поддержки</h1>
-            <p class="subtitle">Внутренний веб-модуль (Service Desk Portal) — Client-Side MVP v1.0</p>
+            <p class="subtitle">Внутренний веб-модуль (Service Desk Portal) — Local MVP v1.0</p>
         </header>
 
-        <!-- Статус локального хранилища -->
+        <!-- Статус локальной системы хранения -->
         <section class="status-section">
-            <div id="storage-status" class="status-badge loading">
-                <i class="fa-solid fa-spinner fa-spin"></i> Инициализация локальной БД...
+            <div id="storage-status" class="status-badge online">
+                <i class="fa-solid fa-database"></i> Локальная БД: Активна (Браузерное хранилище)
             </div>
         </section>
 
-        <!-- Имитация функционала MVP (Интерактивная заглушка) -->
+        <!-- Функционал создания заявок (MVP) -->
         <section class="demo-section">
-            <h2><i class="fa-solid fa-ticket"></i> Быстрое тестирование MVP</h2>
+            <h2><i class="fa-solid fa-ticket"></i> Панель оператора Service Desk</h2>
             <div class="demo-actions">
                 <button id="btn-create-ticket" class="btn">
-                    <i class="fa-solid fa-plus"></i> Создать тестовую заявку (Имитация)
+                    <i class="fa-solid fa-plus"></i> Создать тестовую заявку
                 </button>
-                <p id="ticket-info">Заявок в системе: <strong id="ticket-count">0</strong></p>
+                <p id="ticket-info">Всего обращений в системе: <strong id="ticket-count">0</strong></p>
             </div>
         </section>
 
-        <!-- Состав команды -->
+        <!-- Список участников команды -->
         <section class="team-section">
             <h2><i class="fa-solid fa-users"></i> Команда разработки</h2>
             <div class="team-grid">
@@ -52,14 +54,15 @@
                     <p class="role">Frontend-разработчик</p>
                 </div>
                 <div class="team-card">
-                    <div class="avatar"><i class="fa-solid fa-server"></i></div>
+                    <div class="avatar"><i class="fa-solid fa-vial"></i></div>
                     <h3>Алексеев Алексей</h3>
-                    <p class="role">QA / DevOps-инженер</p>
+                    <p class="role">QA-инженер / Тестировщик</p>
                 </div>
             </div>
         </section>
     </div>
 
+    <!-- Подключение скрипта -->
     <script src="script.js"></script>
 </body>
 </html>
